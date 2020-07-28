@@ -9,7 +9,7 @@
 namespace Model;
 
 
-abstract class abstractvalidator
+abstract class AbstractValidator
 {
     private $errors = array();
 
