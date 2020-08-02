@@ -10,7 +10,7 @@ namespace Model\Forms;
 use Model\Abstracts\AbstractForm;
 
 
-class authForm extends AbstractForm
+class AuthForm extends AbstractForm
 {
     /**
      * @return array  список правил

@@ -6,13 +6,30 @@
  * Time: 12:59
  */
 
-namespace Model;
+namespace Model\Abstracts;
 
 
 abstract class AbstractValidator
 {
-    private $errors = array();
+    protected $errors = array();
+    protected $data;
+    protected $conditions;
+    protected $messages;
 
+    /**
+     * конструктор валидатора
+     *
+     * @param array $data
+     * @param array $conditions
+     * @param array $messages
+     */
+    public function __construct(array $data, array $conditions, array $messages = [])
+    {
+        $this->data = $data;
+        $this->conditions = $conditions;
+        $this->messages = $messages;
+
+    }
 
     /**
      * Производит валидацию данных, помещает отшибки в массив $errors
@@ -25,8 +42,8 @@ abstract class AbstractValidator
      * @param $message array массив входящих данных
      * @return void
      */
-    public function addError($message) {
-        $this -> errors[] = $message;
+    public function addError($fieldAlias,$message) {
+        $this -> errors[$fieldAlias] = $message;
     }
 
     /**

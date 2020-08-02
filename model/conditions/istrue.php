@@ -11,6 +11,8 @@ use Model\Abstracts\AbstractCondition;
 use Model\Exceptions\ConditionTypeException;
 class isTrue extends AbstractCondition
 {
+    private
+    $defaultMessage = 'Значение не является тождественно верным';
     /**
      * Валидирует данные, проверяет является ли входящее значение
      * равным булевой функции true
@@ -21,12 +23,11 @@ class isTrue extends AbstractCondition
      * @return bool
      * @throws ConditionTypeException
      */
-    public function isOk($data = null,$message = 'Значение не является тождественно верным')
+    public function isOk($data = null,$message = null)
     {
-        if (!is_bool ($data)) {
-            throw new ConditionTypeException();
-        }
-        if ($data === true){
+        $message = (isset($message)) ? $message : $this->defaultMessage;
+
+        if ($data === true || $data=='1' || $data == 'true'){
             return true;
         }else{
             $this->errorMessage = $message;

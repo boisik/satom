@@ -16,6 +16,7 @@ namespace Model\Abstracts;
 
 abstract class AbstractForm
 {
+    private $data = array();//предполагается что в форму каким то образом пришли данные( из поста, их апи, не важно)
     /**
      * @return array  список правил
      */
@@ -32,5 +33,22 @@ abstract class AbstractForm
     {
 
     }
+
+
+    /**
+     * например тут проверяем массив $_POST и помещаем содержимое в $data
+     */
+    function setData(){}
+
+
+
+   /**
+     * @return array $data
+     */
+   function getData()
+   {
+       return $this->data;
+   }
+
 
 }

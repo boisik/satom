@@ -12,6 +12,9 @@ use Model\Exceptions\ConditionTypeException;
 use Model\Exceptions\ConditionException;
 class Length extends AbstractCondition
 {
+
+    private
+        $defaultMessage = 'введенная строка имеет не валидную длину';
     /**
      * Минимальная длина
      *
@@ -27,16 +30,15 @@ class Length extends AbstractCondition
     private $max;
 
     /**
-     * Length validation rule constructor.
-     *
-     * @param int $min
-     * @param int $max
-     * @param string $charset
+     * @param array $spesialParams у разных классов набор может быть разный,
+     * чтобы обеспечить стандартный вызов конструктора, сделал вот так
      * @throws ConditionTypeException
      * @throws ConditionException
      */
-    public function __construct($min = null,$max = null)
+    public function __construct($specialParams = [] )
     {
+        $min =  $specialParams['min'];
+        $max =  $specialParams['max'];
         if ($min === null && $max === null) {
             throw new ConditionTypeException();
         }
@@ -61,8 +63,10 @@ class Length extends AbstractCondition
      * @return bool
      * @throws ConditionTypeException
      */
-    public function isOk($data = null,$message = 'Недопустимая длина значения')
+    public function isOk($data = null,$message = null)
     {
+        $message = (isset($message)) ? $message : $this->defaultMessage;
+
         if (!is_string ($data)) {
             throw new ConditionTypeException();
         }

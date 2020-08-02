@@ -22,8 +22,9 @@ class FeedBackForm extends AbstractForm
             "emailAlias"=>array(
                 array('Model\\Conditions\\Email' => null)
             ),
-            "NameAlias"=>array(
-                array('Model\\Conditions\\Length' => ['3','10']),
+            "nameAlias"=>array(
+                array('Model\\Conditions\\Length' => ['min' => '3','max' => '10']),
+                array('Model\\Conditions\\Length' => ['min' => '5','max' => '8']),  //да правило такоеже, это для наглядности.
 
             ),
             "confirmAlias"=>array(

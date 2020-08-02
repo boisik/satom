@@ -12,7 +12,8 @@ use Model\Abstracts\AbstractCondition;
 
 class Email extends  AbstractCondition
 {
-
+    private
+        $defaultMessage = 'Указанный почтовый адрес невалиден';
     /**
      * Валидирует данные, проверяет является ли входящее значение
      * адресом электронной почты
@@ -21,8 +22,9 @@ class Email extends  AbstractCondition
      * @param string $message
      * @return bool
      */
-    public function isOk($data = null,$message = 'Указанный почтовый адрес невалиден')
+    public function isOk($data = null,$message = null)
     {
+        $message = (isset($message)) ? $message : $this->defaultMessage;
         if (!preg_match('/^.+\@\S+\.\S+$/', $data)) {
             $this->errorMessage = $message;
             return false;

@@ -11,7 +11,13 @@ use Model\Interfaces\ConditionInterface;
 
 abstract class AbstractCondition implements ConditionInterface
 {
-    protected $errorMessage;
+    public $errorMessage;
+
+
+    public function __construct($specialParams = [] )
+    {
+
+    }
 
     /**
      * Возвращает текст с описанием ошибки
