@@ -18,12 +18,13 @@ class Email extends  AbstractCondition
      * адресом электронной почты
      *
      * @param mixed $data
-     *
+     * @param string $message
      * @return bool
      */
-    public function isOk($data = null)
+    public function isOk($data = null,$message = 'Указанный почтовый адрес невалиден')
     {
         if (!preg_match('/^.+\@\S+\.\S+$/', $data)) {
+            $this->errorMessage = $message;
             return false;
         }
         return true;

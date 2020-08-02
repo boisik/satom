@@ -8,7 +8,7 @@
 include('model/bootstrap/autoloader.php');
 
 
-$rule = 'Model\\Conditions\\Istrue';
+$rule = 'Model\\Conditions\\Email';
 $data = 'frfr';
 $obj = new $rule();
 var_dump($obj->isOk($data));

@@ -18,6 +18,6 @@ interface ConditionInterface
      *
      * @return bool
      */
-    public function isOk($data = null);
+    public function isOk($data = null,$message=null);
 
 }

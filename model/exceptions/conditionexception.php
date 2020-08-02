@@ -6,7 +6,7 @@
  * Time: 3:12
  */
 namespace Model\Exceptions;
-class conditionException extends \Exception
+class ConditionException extends \Exception
 {
     protected $extra_info = '';
 

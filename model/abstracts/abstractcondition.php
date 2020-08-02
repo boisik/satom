@@ -11,5 +11,17 @@ use Model\Interfaces\ConditionInterface;
 
 abstract class AbstractCondition implements ConditionInterface
 {
+    protected $errorMessage;
+
+    /**
+     * Возвращает текст с описанием ошибки
+     *
+     * @return array
+     */
+    public function getViolations()
+    {
+        return $this->errorMessage;
+    }
+
 
 }
