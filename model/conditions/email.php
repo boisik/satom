@@ -13,7 +13,7 @@ use Model\Abstracts\AbstractCondition;
 class Email extends  AbstractCondition
 {
     private
-        $defaultMessage = 'Указанный почтовый адрес невалиден';
+        $defaultMessage = 'Указанный почтовый адрес некорректен';
     /**
      * Валидирует данные, проверяет является ли входящее значение
      * адресом электронной почты

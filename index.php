@@ -31,7 +31,7 @@ $data = array(
 
     "nameAlias"=>'Ivan',
 
-    "confirmAlias"=>'true',
+    "confirmAlias"=>'НЕОЧЕНЬtrue',
 );
 
 // кастомные уведомления для пользователя

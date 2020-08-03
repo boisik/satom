@@ -14,7 +14,7 @@ class Length extends AbstractCondition
 {
 
     private
-        $defaultMessage = 'введенная строка имеет не валидную длину';
+        $defaultMessage = 'Введенная строка имеет не допустимую длину';
     /**
      * Минимальная длина
      *
