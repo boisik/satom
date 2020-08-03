@@ -23,7 +23,10 @@ class Validator  extends  AbstractValidator
             if (isset($this->data[$fieldAlias])){
 
                 foreach ($this->conditions[$fieldAlias] as $condition){
-                    $className = array_key_first($condition);
+
+                    $keys = array_keys($condition);
+                    $className = $keys[0];
+                  //  $className = array_key_first($condition);    При версии PHP < 7.3  не канает
                     $data = $fieldValue;
                     $specialParams = $condition[$className];
                     $conditionObject = new $className($specialParams);

@@ -23,7 +23,7 @@ abstract class AbstractValidator
      * @param array $conditions
      * @param array $messages
      */
-    public function __construct(array $data, array $conditions, array $messages = [])
+    public function __construct(array $data, array $conditions, array $messages = array())
     {
         $this->data = $data;
         $this->conditions = $conditions;

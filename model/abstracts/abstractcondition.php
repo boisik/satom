@@ -14,7 +14,7 @@ abstract class AbstractCondition implements ConditionInterface
     public $errorMessage;
 
 
-    public function __construct($specialParams = [] )
+    public function __construct($specialParams = array() )
     {
 
     }

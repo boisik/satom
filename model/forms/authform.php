@@ -22,11 +22,11 @@ class AuthForm extends AbstractForm
         return array(
 
             "loginAlias"=>array(
-                 array('Model\\Conditions\\Length'=>['3','10']),
+                 array('Model\\Conditions\\Length'=>array('min' => '3','max' => '10')),
 
              ),
             "passwordAlias"=>array(
-                array('Model\\Conditions\\Length'=>['6','10']),
+                array('Model\\Conditions\\Length'=>array('min' => '6','max' => '10')),
 
             ),
         );
